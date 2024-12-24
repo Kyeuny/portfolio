@@ -131,6 +131,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 // skills 도형 회전
 const spinningWrap = document.querySelector("#spinning_wrap");
+const spinningShape = document.querySelector(".spinning_shape");
+
+
+spinningWrap.style.height = document.getElementById('skills').offsetHeight + 'px';
+
+const spinningShapeHeight = spinningShape.offsetHeight;
 
 const tl = gsap.timeline({
     scrollTrigger: {
@@ -142,13 +148,14 @@ const tl = gsap.timeline({
 });
 
 tl.to(".spinning_shape", {
-    y: () => spinningWrap.offsetHeight,
+    y: () => spinningWrap.offsetHeight - spinningShapeHeight,
     rotateZ: 500,
     ease: "power1.out"
 });
 
 
 // portfolio 섹션 스크롤 슬라이드
+
 
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
