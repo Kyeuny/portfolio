@@ -35,9 +35,15 @@ header {
       right: 32px;
       @media (max-width: 1024px) {
         right: 24px;
+        width: 52px;
+        height: 52px;
+        top: calc((64px - 52px) / 2);
       }
       @media (max-width: 768px) {
         right: 16px;
+        width: 48px;
+        height: 48px;
+        top: calc((64px - 48px) / 2);
       }
 
       @media (max-width: 480px) {
@@ -68,6 +74,34 @@ header {
         width: 50%;
         height: 100%;
         @include mixins.flex-space;
+        @media (max-width: 1024px) {
+          width: 80%;
+        }
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+        li {
+          a {
+            position: relative;
+            padding: 0 4px;
+            opacity: 0.5;
+            &.active {
+              opacity: 1;
+              &::after {
+                content: "";
+                display: block;
+                width: 6px;
+                height: 6px;
+                border-radius: 6px;
+                background-color: variable.$primary-color;
+                position: absolute;
+                top: 0;
+                right: -8px;
+                z-index: -1;
+              }
+            }
+          }
+        }
       }
     }
   }

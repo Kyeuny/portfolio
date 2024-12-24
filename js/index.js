@@ -15,6 +15,56 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// ScrollToPlugin 활성화
+gsap.registerPlugin(ScrollToPlugin);
+
+document.querySelectorAll('#nav_scroll a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            gsap.to(window, {
+                scrollTo: {
+                    y: targetElement,
+                    offsetY: 10
+                },
+                duration: 1
+            });
+            document.querySelectorAll('#nav_scroll a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+        }
+    });
+});
+
+// 섹션 도달 시 active 클래스 변경
+const anchors = document.querySelectorAll('#nav_scroll a');
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY;
+
+    anchors.forEach(anchor => {
+        const targetId = anchor.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const rect = targetElement.getBoundingClientRect();
+            const sectionTop = rect.top + window.scrollY;
+            const sectionHeight = targetElement.offsetHeight;
+
+            if (
+                scrollPosition >= sectionTop - 10 &&
+                scrollPosition < sectionTop + sectionHeight
+            ) {
+                document.querySelectorAll('#nav_scroll a').forEach(a => a.classList.remove('active'));
+                anchor.classList.add('active');
+            }
+        }
+    });
+});
+
+
 // 스크롤 부드럽게 lenis
 const lenis = new Lenis({
     smoothWheel: true,
@@ -119,7 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
             start: "top top",
             end: () => "+=" + ProjectTrigger.offsetWidth,
             pinSpacing: true,
-            markers: true
+            markers: true,
+            invalidateOnRefresh: true, // 리사이즈 시 위치 재계산
         }
     });
 
