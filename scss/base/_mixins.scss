@@ -1,0 +1,76 @@
+@use "sass:math";
+
+/* px을 vw 뷰포트로 변경 */
+@function px-to-vw($px, $base: 1920) {
+  @return round(math.div($px, $base) * 100vw);
+}
+/* flex 변수 설정 */
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+/* 폰트 변수 설정 */
+
+@function em($size) {
+  @return math.div($size, 16);
+}
+
+@function letter-spacing-em($percent) {
+  @return math.div($percent, 100) * 1em;
+}
+
+@mixin font-size($size, $line-height: null, $letter-spacing: null) {
+  font-size: em($size) * 1em;
+
+  @if $line-height != null {
+    line-height: em($line-height);
+  }
+
+  @if $letter-spacing != null {
+    letter-spacing: letter-spacing-em($letter-spacing);
+  }
+}
+@mixin font-style(
+  $family,
+  $size,
+  $weight,
+  $color,
+  $letter-spacing-percent: 0,
+  $line-height: 1.5
+) {
+  font-family: $family;
+  font-size: em($size) * 1em;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: letter-spacing-em($letter-spacing-percent);
+  line-height: $line-height;
+}
+
+/* 배경 이미지 크기 고정 변수 */
+
+@mixin bg-fixed {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

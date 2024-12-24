@@ -1,0 +1,74 @@
+@use "../base/variables" as variable;
+@use "../base/mixins" as mixins;
+
+/* header 스타일 적용 */
+header {
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  mix-blend-mode: difference;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: variable.$color-white;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+  }
+  nav {
+    height: 128px;
+    @include mixins.flex-end;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    position: relative;
+    .header_fixed {
+      /* 공통 - 포트폴리오 햄버거 버튼 */
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      top: calc((64px - 56px) / 2);
+      right: 32px;
+      @media (max-width: 1024px) {
+        right: 24px;
+      }
+      @media (max-width: 768px) {
+        right: 16px;
+      }
+
+      @media (max-width: 480px) {
+        right: 12px;
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        @include mixins.flex-center;
+        background-color: variable.$color-white;
+      }
+    }
+    #nav_default {
+      width: 100%;
+      height: 64px;
+      @include mixins.flex-space;
+      transition: transform 1s ease-in-out;
+      transform: translateY(0%);
+    }
+    #nav_scroll {
+      width: 100%;
+      height: 64px;
+      @include mixins.flex-end;
+      z-index: 3;
+      transition: transform 1s ease-in-out;
+      transform: translateY(0%);
+      ul {
+        width: 50%;
+        height: 100%;
+        @include mixins.flex-space;
+      }
+    }
+  }
+}

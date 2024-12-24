@@ -1,0 +1,30 @@
+// 리셋 파일
+@use "../base/reset";
+
+// 변수와 믹스인
+@use "../base/variables";
+@use "../base/mixins";
+
+// 폰트 파일
+@use "../base/font" as font;
+
+footer {
+  width: 100%;
+  height: 88px;
+  #footer_inner {
+    height: 100%;
+    @include mixins.flex-center;
+    flex-direction: column;
+    gap: 12px;
+    p {
+      width: 100%;
+      text-align: right;
+      @include mixins.font-style(
+        variables.$font-primary,
+        13,
+        variables.$font-weight-regular,
+        variables.$color-gray
+      );
+    }
+  }
+}
