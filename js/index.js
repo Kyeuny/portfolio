@@ -128,19 +128,21 @@ gsap.ticker.lagSmoothing(0);
 
 
 // 텍스트 애니메이션 textify
-const MovingTitle = new TextifyTitle({
-    selector: ".moving_title",
-    duration: 300,
-    stagger: 100,
-    top: true,
-    reveal: true,
-    once: false,
-    rotation: 45,
-    scale: 2,
-    easing: "elasticOut",
-    threshold: 0.5,
-    transformOrigin: "center center",
-});
+setTimeout(() => {
+    const MovingTitle = new TextifyTitle({
+        selector: ".moving_title",
+        duration: 300,
+        stagger: 100,
+        top: true,
+        reveal: true,
+        once: false,
+        rotation: 45,
+        scale: 2,
+        easing: "elasticOut",
+        threshold: 0.5,
+        transformOrigin: "center center",
+    });
+}, 3200);
 
 const profileTitle = new TextifyTitle({
     selector: "#profile_top h2",
