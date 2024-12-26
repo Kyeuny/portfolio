@@ -1,6 +1,4 @@
 @use "sass:math";
-
-/* px을 vw 뷰포트로 변경 */
 @function px-to-vw($px, $base: 1920) {
   @return round(math.div($px, $base) * 100vw);
 }

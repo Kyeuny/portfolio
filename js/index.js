@@ -1,4 +1,18 @@
-// 스크롤 내려가면 nav바뀌는 스크립트
+// 로딩 페이지
+const loadingPage = document.querySelector('#loading_page');
+const cursorStyle = document.querySelector('.cursor')
+
+document.body.classList.add('loading_scroll');
+cursorStyle.style.display = 'none';
+
+
+setTimeout(() => {
+    loadingPage.style.display = 'none';
+    cursorStyle.style.display = 'block';
+    document.html.classList.remove('loading_scroll');
+    document.body.classList.remove('loading_scroll');
+}, 3000);
+
 
 const defaultNav = document.querySelector('#nav_default');
 const movingNav = document.querySelector('#nav_scroll');
@@ -15,7 +29,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ScrollToPlugin 활성화
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+const links = document.querySelectorAll('a, button');
+
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        cursor.style.backgroundColor = '#45ef55';
+        cursor.style.opacity = '0.8';
+    });
+    link.addEventListener('mouseleave', () => {
+        cursor.style.backgroundColor = '#f5f5f5';
+        cursor.style.opacity = '0.8';
+    });
+
+});
+
 gsap.registerPlugin(ScrollToPlugin);
 
 document.querySelectorAll('#nav_scroll a').forEach(anchor => {
@@ -29,7 +63,7 @@ document.querySelectorAll('#nav_scroll a').forEach(anchor => {
             gsap.to(window, {
                 scrollTo: {
                     y: targetElement,
-                    offsetY: 10
+                    offsetY: 0
                 },
                 duration: 1
             });
@@ -124,6 +158,19 @@ const profileTitle = new TextifyTitle({
 });
 
 
+const skillsTitle = new TextifyTitle({
+    selector: "#design h2",
+    duration: 300,
+    delay: 300,
+    once: false,
+    stagger: 0.05,
+    ease: 'expo.inOut',
+    rotation: 60,
+    transformOrigin: "center center",
+});
+
+
+
 // 스크롤 이벤트 = gsap
 gsap.registerPlugin(ScrollTrigger);
 
@@ -160,25 +207,42 @@ tl.to(".spinning_shape", {
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    //get all item
     let projectSections = gsap.utils.toArray("#project_wrap .project");
     let ProjectTrigger = document.querySelector('#portfolio')
 
-    gsap.to(projectSections, {
-        xPercent: -100 * (projectSections.length - 1),
-        x: -11.1,
-        // ease: "",
-        scrollTrigger: {
-            trigger: "#portfolio",
-            pin: true,
-            scrub: 1,
-            // snap: 1 / 2.355,
-            start: "top top",
-            end: () => "+=" + ProjectTrigger.offsetWidth,
-            pinSpacing: true,
-            markers: true,
-            invalidateOnRefresh: true, // 리사이즈 시 위치 재계산
-        }
+    let projectHorizontal = gsap.matchMedia();
+
+    // 768 이상은 horizontal 스크롤
+    projectHorizontal.add("(min-width: 769px)", () => {
+        gsap.to(projectSections, {
+            xPercent: -100 * (projectSections.length - 1),
+            x: 0,
+            // ease: "",
+            scrollTrigger: {
+                trigger: "#portfolio",
+                pin: true,
+                scrub: 1,
+                // snap: 1 / 4.7,
+                start: "top top",
+                end: () => "+=" + ProjectTrigger.offsetWidth,
+                pinSpacing: true,
+                markers: true,
+                invalidateOnRefresh: true, // 리사이즈 시 위치 재계산
+            }
+        });
+    });
+
+    // 768 이하는 vertical 스크롤 (section pin)
+    projectHorizontal.add("(max-width: 768px)", () => {
+        gsap.utils.toArray('.project').forEach(project => {
+            ScrollTrigger.create({
+                trigger: project,
+                start: 'top top',
+                pin: true,
+                pinSpacing: false,
+                snap: 1 / 5,
+            });
+        });
     });
 
     const swiper = new Swiper('.swiper', {
@@ -205,13 +269,13 @@ document.addEventListener("DOMContentLoaded", function () {
             // 768px 이상
             768: {
                 slidesPerView: 2, // 한 화면에 2개의 슬라이드
-                spaceBetween: 20, // 간격 20px
+                spaceBetween: 24, // 간격 20px
             },
             // 480px 이상
-            480: {
-                slidesPerView: 1, // 한 화면에 1개의 슬라이드
-                spaceBetween: 10, // 간격 10px
-            },
+            0: {
+                slidesPerView: 1.5,
+                paceBetween: 20,
+            }
         },
     });
 
