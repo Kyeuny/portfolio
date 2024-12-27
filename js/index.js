@@ -1,16 +1,15 @@
 // 로딩 페이지
-const loadingPage = document.querySelector('#loading_page');
-const cursorStyle = document.querySelector('.cursor')
+const loadingPageElement = document.querySelector('#loading_page');
+const cursorElement = document.querySelector('.cursor');
 
 document.body.classList.add('loading_scroll');
-cursorStyle.style.display = 'none';
+cursorElement.style.display = 'none';
 
 
 setTimeout(() => {
-    loadingPage.style.display = 'none';
-    cursorStyle.style.display = 'block';
-    document.html.classList.remove('loading_scroll');
-    document.body.classList.remove('loading_scroll');
+    loadingPageElement.style.display = 'none';
+    cursorElement.style.display = 'block';
+    document.body.classList.remove('loading_scroll'); // 중복 제거
 }, 3000);
 
 
