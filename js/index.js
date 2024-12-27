@@ -30,23 +30,40 @@ window.addEventListener('scroll', () => {
 
 const cursor = document.querySelector('.cursor');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-});
+const cursorSet = () => {
 
-const links = document.querySelectorAll('a, button');
-
-links.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = '#45ef55';
-        cursor.style.opacity = '0.8';
-    });
-    link.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = '#f5f5f5';
-        cursor.style.opacity = '0.8';
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
     });
 
+    const links = document.querySelectorAll('a, button');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.2)'
+            cursor.style.backgroundColor = '#45ef55';
+            cursor.style.opacity = '0.8';
+        });
+        link.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)'
+            cursor.style.backgroundColor = '#f5f5f5';
+            cursor.style.opacity = '0.8';
+        });
+    });
+}
+
+const ScreenSize = () => {
+    if (window.innerWidth >= 768) {
+        cursorSet();
+    }
+};
+
+ScreenSize();
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        cursorSet();
+    }
 });
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -126,7 +143,7 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-// 텍스트 애니메이션 textify
+// 텍스트 애니메이션 textify 플러그인 사용 ----------------------------------------
 setTimeout(() => {
     const MovingTitle = new TextifyTitle({
         selector: ".moving_title",
@@ -202,8 +219,7 @@ tl.to(".spinning_shape", {
 });
 
 
-// portfolio 섹션 스크롤 슬라이드
-
+// portfolio 섹션 스크롤 슬라이드 ---------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
@@ -228,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 end: () => "+=" + ProjectTrigger.offsetWidth,
                 pinSpacing: true,
                 markers: true,
-                invalidateOnRefresh: true, // 리사이즈 시 위치 재계산
+                invalidateOnRefresh: true,
             }
         });
     });
@@ -246,6 +262,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
+    // deisgn 영역 오토 슬라이더 swiper플러그인 사용 ----------------------------
     const swiper = new Swiper('.swiper', {
         slidesPerView: 4,
         loop: true,
@@ -259,18 +277,18 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         breakpoints: {
             1440: {
-                slidesPerView: 4, // 한 화면에 3개의 슬라이드
-                spaceBetween: 0, // 간격 30px
+                slidesPerView: 4,
+                spaceBetween: 0
             },
             // 1024px 이상
             1024: {
-                slidesPerView: 3, // 한 화면에 3개의 슬라이드
-                spaceBetween: 30, // 간격 30px
+                slidesPerView: 3,
+                spaceBetween: 30,
             },
             // 768px 이상
             768: {
-                slidesPerView: 2, // 한 화면에 2개의 슬라이드
-                spaceBetween: 24, // 간격 20px
+                slidesPerView: 2,
+                spaceBetween: 24,
             },
             // 480px 이상
             0: {
