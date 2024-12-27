@@ -32,11 +32,6 @@
   cursor: none;
 }
 
-a,
-button {
-  cursor: none;
-}
-
 body {
   width: 100%;
   min-width: 375px;
@@ -72,7 +67,7 @@ body::-webkit-scrollbar {
     padding: 0 12px;
   }
 }
-// 깃 저장이 왜 안 되냐
+
 // 그리드 컨테이너 스타일
 .grid-container {
   height: fit-content;
@@ -95,24 +90,29 @@ body::-webkit-scrollbar {
 
 // 마우스 커서
 .cursor {
-  width: 48px;
-  height: 48px;
-  background-color: variables.$color-white;
-  mix-blend-mode: difference;
-  border-radius: 100%;
+  width: fit-content;
+  height: fit-content;
+  @include mixins.flex-center;
+  flex-direction: column;
+  gap: 4px;
   position: fixed;
   pointer-events: none;
-  transform: translate(-50%, -50%);
   z-index: 1000;
-  transition: transform 1s ease-in-out;
-  &::after {
-    content: "Scroll";
+  opacity: 0.5;
+  .circle {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: variables.$color-white;
+    border-radius: 100%;
+    transition: 0.3s ease-in-out;
+  }
+  .text {
+    text-align: center;
+    display: block;
     @include mixins.font-size(16);
-    position: absolute;
-    top: 56px;
-    left: 4px;
-    animation: scroll 0.5s infinite ease-in-out alternate-reverse;
-    @keyframes scroll {
+    animation: textMoning 0.5s infinite ease-in-out alternate-reverse;
+    @keyframes textMoning {
       0% {
         transform: translateY(0);
       }
@@ -121,7 +121,7 @@ body::-webkit-scrollbar {
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 32px;
     height: 32px;
     display: none;
@@ -398,7 +398,7 @@ main {
   }
   #home {
     height: 100vh;
-    max-height: 919px;
+    // max-height: 919px;
     @include mixins.flex-center;
 
     #home_inner {
@@ -426,9 +426,6 @@ main {
         @media (max-width: 768px) {
           white-space: wrap;
           line-height: 1em;
-        }
-
-        @media (max-width: 480px) {
         }
       }
       .main_title {
@@ -892,6 +889,7 @@ main {
 
     @media (max-width: 768px) {
       gap: 40px;
+      padding-top: 60px;
     }
 
     @media (max-width: 480px) {
@@ -942,10 +940,7 @@ main {
         align-items: start;
         flex-direction: column;
       }
-
-      @media (max-width: 480px) {
-      }
-      span.skills {
+      span {
         width: 290px;
         height: 100px;
         background-image: url(../img/skills.png);
@@ -955,7 +950,6 @@ main {
         top: -10px;
         @media (max-width: 768px) {
           left: 80px;
-
           top: -15px;
         }
         @media (max-width: 480px) {
@@ -1091,7 +1085,7 @@ main {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       height: 500vh;
     }
 
@@ -1101,7 +1095,7 @@ main {
       transform: none !important;
       -webkit-transform: none !important;
       // overflow-x: hidden;
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         flex-direction: column;
       }
     }
@@ -1111,7 +1105,7 @@ main {
       height: 100vh;
       box-sizing: border-box;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         position: sticky;
       }
 
@@ -1143,27 +1137,11 @@ main {
           top: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(variables.$color-white, 1);
-          mix-blend-mode: screen;
+          background-color: variables.$color-bg-black;
+          backdrop-filter: brightness(0.7);
+          mix-blend-mode: overlay;
           padding: 68px 0 0;
           opacity: 0.8;
-          svg {
-            display: none;
-            z-index: 2;
-            width: 100vw;
-            // max-width: 800px;
-            margin: 0 auto;
-            fill: variables.$color-bg-black;
-            opacity: 0.8;
-            &.logo_top {
-              position: absolute;
-              top: -50%;
-            }
-            &.logo_bottom {
-              position: absolute;
-              bottom: -30%;
-            }
-          }
         }
       }
 
@@ -1217,7 +1195,7 @@ main {
               variables.$font-tertiary,
               20,
               variables.$font-weight-black,
-              variables.$color-black,
+              variables.$color-white,
               -2
             );
             margin-bottom: 24px;
@@ -1234,7 +1212,7 @@ main {
               variables.$font-primary,
               40,
               variables.$font-weight-extrabold,
-              variables.$color-black
+              variables.$color-white
             );
             margin-bottom: 24px;
             @media (max-width: 1024px) {
@@ -1268,7 +1246,7 @@ main {
                 variables.$font-primary,
                 16,
                 variables.$font-weight-regular,
-                variables.$color-black
+                variables.$color-white
               );
               @include mixins.flex-space;
 
@@ -1313,7 +1291,7 @@ main {
               variables.$font-primary,
               16,
               variables.$font-weight-regular,
-              variables.$color-black,
+              variables.$color-white,
               -2,
               1.8
             );
@@ -1339,21 +1317,21 @@ main {
             @media (max-width: 480px) {
               margin-top: 0px;
             }
-            button {
+            a {
+              display: block;
               height: 52px;
               padding: 0 24px 0 12px;
-              border: 1px solid variables.$color-black;
+              border: 1px solid variables.$color-white;
               @include mixins.flex-center;
               @include mixins.font-style(
                 variables.$font-primary,
-                16,
-                variables.$font-weight-regular,
-                variables.$color-black,
+                14,
+                variables.$font-weight-semibold,
+                variables.$color-white,
                 -1,
                 52px
               );
-              background-color: rgba(variables.$color-black, 0);
-              cursor: pointer;
+              background-color: rgba(variables.$color-white, 0);
               position: relative;
               overflow: hidden;
               @media (max-width: 1280px) {
@@ -1381,7 +1359,8 @@ main {
               }
               &.site_btn {
                 width: 160px;
-                padding: 0 36px;
+                padding: 0;
+                text-align: center;
                 display: inline-block;
                 @media (max-width: 1440px) {
                   width: 160px;
@@ -1391,20 +1370,20 @@ main {
               &.github_btn {
                 content: "github";
                 span {
-                  background-image: url(../img/portfolio_github_black.svg);
+                  background-image: url(../img/portfolio_github_white.svg);
                 }
                 &:hover span,
                 &:active span {
-                  background-image: url(../img/portfolio_github_white.svg);
+                  background-image: url(../img/portfolio_github_black.svg);
                 }
               }
               &.figma_btn {
                 span {
-                  background-image: url(../img/portfolio_figma_black.svg);
+                  background-image: url(../img/portfolio_figma_white.svg);
                 }
                 &:hover span,
                 &:active span {
-                  background-image: url(../img/portfolio_figma_white.svg);
+                  background-image: url(../img/portfolio_figma_black.svg);
                 }
               }
               &::after {
@@ -1416,14 +1395,13 @@ main {
                 z-index: -1;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(variables.$color-black, 1);
-                backdrop-filter: blur(5);
+                background-color: rgba(variables.$color-white, 1);
                 transform: translateY(0); // 초기 위치 설정
                 transition: transform 0.3s ease; // 애니메이션 추가
               }
               &:hover,
               &:active {
-                color: variables.$color-white;
+                color: variables.$color-black;
               }
               &:hover::after,
               &:active::after {
@@ -1434,8 +1412,8 @@ main {
         }
         .portfolio_right {
           width: 50%;
-          background-color: red;
           aspect-ratio: 1 / 1;
+          @include mixins.flex-center;
 
           @media (max-width: 1024px) {
             width: 100%;
@@ -1470,6 +1448,7 @@ main {
       padding: 160px 0 80px;
     }
     @media (max-width: 768px) {
+      padding: 120px 0 80px;
       gap: 0;
     }
 
@@ -1696,6 +1675,7 @@ main {
     }
 
     @media (max-width: 480px) {
+      height: 100vh;
     }
     #contact_inner {
       height: 100%;
@@ -1838,7 +1818,6 @@ main {
           justify-content: start;
           border: 1px solid variables.$color-white;
           background-color: rgba(variables.$color-white, 0);
-          cursor: pointer;
           overflow: hidden;
           @include mixins.font-style(
             variables.$font-primary,

@@ -1,4 +1,4 @@
-// 로딩 페이지
+// 로딩 페이지--------------------------------------------------------------------------------
 const loadingPageElement = document.querySelector('#loading_page');
 const cursorElement = document.querySelector('.cursor');
 
@@ -13,6 +13,7 @@ setTimeout(() => {
 }, 3000);
 
 
+// nav 스크롤 시 변경 --------------------------------------------------------------------------
 const defaultNav = document.querySelector('#nav_default');
 const movingNav = document.querySelector('#nav_scroll');
 
@@ -28,32 +29,45 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+
+// 커서 스타일 변경 -----------------------------------------------------------------------------
 const cursor = document.querySelector('.cursor');
+const cursorCircle = document.querySelector('.cursor>.circle')
+const cursorText = document.querySelector('.cursor>.text')
 
 const cursorSet = () => {
 
+    // 커서 위치
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+        cursor.style.left = `${e.clientX - 20}px`;
+        cursor.style.top = `${e.clientY - 20}px`;
     });
 
-    const links = document.querySelectorAll('a, button');
+    const links = document.querySelectorAll('a, button, .img_link');
+
+    // 포인터 스타일 변경
+
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.2)'
-            cursor.style.backgroundColor = '#45ef55';
-            cursor.style.opacity = '0.8';
+            cursorCircle.style.transform = 'scale(0.5)'
+            cursorCircle.style.backgroundColor = '#45ef55';
+            cursor.style.opacity = '1';
+            cursor.style.mixBlendMode = 'difference';
+            cursorText.innerHTML = "Click"
         });
         link.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)'
-            cursor.style.backgroundColor = '#f5f5f5';
-            cursor.style.opacity = '0.8';
+            cursorCircle.style.transform = 'scale(1)'
+            cursorCircle.style.backgroundColor = '#f5f5f5';
+            cursor.style.opacity = '0.5';
+            cursor.style.mixBlendMode = '';
+            cursorText.innerHTML = "Scorll"
         });
     });
 }
 
 const ScreenSize = () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
         cursorSet();
     }
 };
@@ -61,7 +75,7 @@ const ScreenSize = () => {
 ScreenSize();
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
         cursorSet();
     }
 });
@@ -225,12 +239,12 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     let projectSections = gsap.utils.toArray("#project_wrap .project");
-    let ProjectTrigger = document.querySelector('#portfolio')
+    let ProjectTrigger = document.querySelector('#portfolio');
 
     let projectHorizontal = gsap.matchMedia();
 
-    // 768 이상은 horizontal 스크롤
-    projectHorizontal.add("(min-width: 769px)", () => {
+    // 1025 이상은 horizontal 스크롤
+    projectHorizontal.add("(min-width: 1025px)", () => {
         gsap.to(projectSections, {
             xPercent: -100 * (projectSections.length - 1),
             x: 0,
@@ -243,14 +257,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 start: "top top",
                 end: () => "+=" + ProjectTrigger.offsetWidth,
                 pinSpacing: true,
-                markers: true,
                 invalidateOnRefresh: true,
             }
         });
     });
 
-    // 768 이하는 vertical 스크롤 (section pin)
-    projectHorizontal.add("(max-width: 768px)", () => {
+    // 1024 이하는 vertical 스크롤 (section pin)
+    projectHorizontal.add("(max-width: 1024px)", () => {
+        let projectVideo = document.querySelector('video');
         gsap.utils.toArray('.project').forEach(project => {
             ScrollTrigger.create({
                 trigger: project,
@@ -258,6 +272,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 pin: true,
                 pinSpacing: false,
                 snap: 1 / 5,
+                onEnter: () => projectVideo.play(),
+                onLeave: () => projectVideo.pause(),
+                onEnterBack: () => projectVideo.play(),
+                onLeaveBack: () => projectVideo.pause()
             });
         });
     });

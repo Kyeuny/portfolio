@@ -374,11 +374,6 @@ footer #footer_inner p {
   cursor: none;
 }
 
-a,
-button {
-  cursor: none;
-}
-
 body {
   width: 100%;
   min-width: 375px;
@@ -444,26 +439,35 @@ body::-webkit-scrollbar {
 }
 
 .cursor {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5;
+}
+.cursor .circle {
+  display: inline-block;
   width: 48px;
   height: 48px;
   background-color: #f5f5f5;
-  mix-blend-mode: difference;
   border-radius: 100%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  transition: transform 1s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.cursor::after {
-  content: "Scroll";
+.cursor .text {
+  text-align: center;
+  display: block;
   font-size: 1em;
-  position: absolute;
-  top: 56px;
-  left: 4px;
-  animation: scroll 0.5s infinite ease-in-out alternate-reverse;
+  animation: textMoning 0.5s infinite ease-in-out alternate-reverse;
 }
-@keyframes scroll {
+@keyframes textMoning {
   0% {
     transform: translateY(0);
   }
@@ -471,7 +475,7 @@ body::-webkit-scrollbar {
     transform: translateY(12px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .cursor {
     width: 32px;
     height: 32px;
@@ -717,7 +721,6 @@ main section {
 }
 main #home {
   height: 100vh;
-  max-height: 919px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1308,6 +1311,7 @@ main #skills {
 @media (max-width: 768px) {
   main #skills {
     gap: 40px;
+    padding-top: 60px;
   }
 }
 @media (max-width: 480px) {
@@ -1368,7 +1372,7 @@ main #skills h2 {
     flex-direction: column;
   }
 }
-main #skills h2 span.skills {
+main #skills h2 span {
   width: 290px;
   height: 100px;
   background-image: url(../img/skills.png);
@@ -1380,13 +1384,13 @@ main #skills h2 span.skills {
   top: -10px;
 }
 @media (max-width: 768px) {
-  main #skills h2 span.skills {
+  main #skills h2 span {
     left: 80px;
     top: -15px;
   }
 }
 @media (max-width: 480px) {
-  main #skills h2 span.skills {
+  main #skills h2 span {
     height: 80px;
   }
 }
@@ -1542,7 +1546,7 @@ main #portfolio {
   height: 100vh;
   overflow: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main #portfolio {
     height: 500vh;
   }
@@ -1554,7 +1558,7 @@ main #portfolio #project_wrap {
   transform: none !important;
   -webkit-transform: none !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main #portfolio #project_wrap {
     flex-direction: column;
   }
@@ -1565,7 +1569,7 @@ main #portfolio .project {
   height: 100vh;
   box-sizing: border-box;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main #portfolio .project {
     position: sticky;
   }
@@ -1603,26 +1607,12 @@ main #portfolio .project .video_wrap .video_title {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
-  mix-blend-mode: screen;
+  background-color: #000;
+  -webkit-backdrop-filter: brightness(0.7);
+          backdrop-filter: brightness(0.7);
+  mix-blend-mode: overlay;
   padding: 68px 0 0;
   opacity: 0.8;
-}
-main #portfolio .project .video_wrap .video_title svg {
-  display: none;
-  z-index: 2;
-  width: 100vw;
-  margin: 0 auto;
-  fill: #000;
-  opacity: 0.8;
-}
-main #portfolio .project .video_wrap .video_title svg.logo_top {
-  position: absolute;
-  top: -50%;
-}
-main #portfolio .project .video_wrap .video_title svg.logo_bottom {
-  position: absolute;
-  bottom: -30%;
 }
 main #portfolio .project .portfolio_inner {
   height: 100%;
@@ -1693,7 +1683,7 @@ main #portfolio .project .portfolio_inner .portfolio_left .project_type {
   font-family: "LexendExa", sans-serif;
   font-size: 1.25em;
   font-weight: 900;
-  color: #333;
+  color: #f5f5f5;
   letter-spacing: -0.02em;
   line-height: 1.5;
   margin-bottom: 24px;
@@ -1713,7 +1703,7 @@ main #portfolio .project .portfolio_inner .portfolio_left h2 {
   font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
   font-size: 2.5em;
   font-weight: 800;
-  color: #333;
+  color: #f5f5f5;
   letter-spacing: 0em;
   line-height: 1.5;
   margin-bottom: 24px;
@@ -1756,7 +1746,7 @@ main #portfolio .project .portfolio_inner .portfolio_left .project_info li {
   font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
   font-size: 1em;
   font-weight: 400;
-  color: #333;
+  color: #f5f5f5;
   letter-spacing: 0em;
   line-height: 1.5;
   display: flex;
@@ -1805,7 +1795,7 @@ main #portfolio .project .portfolio_inner .portfolio_left .project_text {
   font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
   font-size: 1em;
   font-weight: 400;
-  color: #333;
+  color: #f5f5f5;
   letter-spacing: -0.02em;
   line-height: 1.8;
 }
@@ -1843,35 +1833,35 @@ main #portfolio .project .portfolio_inner .portfolio_left .btn_box {
     margin-top: 0px;
   }
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a {
+  display: block;
   height: 52px;
   padding: 0 24px 0 12px;
-  border: 1px solid #333;
+  border: 1px solid #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  color: #333;
+  font-size: 0.875em;
+  font-weight: 600;
+  color: #f5f5f5;
   letter-spacing: -0.01em;
   line-height: 52px;
-  background-color: rgba(51, 51, 51, 0);
-  cursor: pointer;
+  background-color: rgba(245, 245, 245, 0);
   position: relative;
   overflow: hidden;
 }
 @media (max-width: 1280px) {
-  main #portfolio .project .portfolio_inner .portfolio_left .btn_box button {
+  main #portfolio .project .portfolio_inner .portfolio_left .btn_box a {
     width: 150px;
   }
 }
 @media (max-width: 1024px) {
-  main #portfolio .project .portfolio_inner .portfolio_left .btn_box button {
+  main #portfolio .project .portfolio_inner .portfolio_left .btn_box a {
     justify-content: space-between;
   }
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button span {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a span {
   display: block;
   width: 32px;
   height: 32px;
@@ -1881,42 +1871,43 @@ main #portfolio .project .portfolio_inner .portfolio_left .btn_box button span {
   background-position: 50% 50%;
 }
 @media (max-width: 1280px) {
-  main #portfolio .project .portfolio_inner .portfolio_left .btn_box button span {
+  main #portfolio .project .portfolio_inner .portfolio_left .btn_box a span {
     margin-right: 12px;
   }
 }
 @media (max-width: 1024px) {
-  main #portfolio .project .portfolio_inner .portfolio_left .btn_box button span {
+  main #portfolio .project .portfolio_inner .portfolio_left .btn_box a span {
     margin-right: 10px;
   }
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.site_btn {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.site_btn {
   width: 160px;
-  padding: 0 36px;
+  padding: 0;
+  text-align: center;
   display: inline-block;
 }
 @media (max-width: 1440px) {
-  main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.site_btn {
+  main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.site_btn {
     width: 160px;
     padding: 0;
   }
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.github_btn {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.github_btn {
   content: "github";
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.github_btn span {
-  background-image: url(../img/portfolio_github_black.svg);
-}
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.github_btn:hover span, main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.github_btn:active span {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.github_btn span {
   background-image: url(../img/portfolio_github_white.svg);
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.figma_btn span {
-  background-image: url(../img/portfolio_figma_black.svg);
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.github_btn:hover span, main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.github_btn:active span {
+  background-image: url(../img/portfolio_github_black.svg);
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.figma_btn:hover span, main #portfolio .project .portfolio_inner .portfolio_left .btn_box button.figma_btn:active span {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.figma_btn span {
   background-image: url(../img/portfolio_figma_white.svg);
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button::after {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.figma_btn:hover span, main #portfolio .project .portfolio_inner .portfolio_left .btn_box a.figma_btn:active span {
+  background-image: url(../img/portfolio_figma_black.svg);
+}
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -1925,22 +1916,22 @@ main #portfolio .project .portfolio_inner .portfolio_left .btn_box button::after
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #333333;
-  -webkit-backdrop-filter: blur(5);
-          backdrop-filter: blur(5);
+  background-color: whitesmoke;
   transform: translateY(0);
   transition: transform 0.3s ease;
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button:hover, main #portfolio .project .portfolio_inner .portfolio_left .btn_box button:active {
-  color: #f5f5f5;
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a:hover, main #portfolio .project .portfolio_inner .portfolio_left .btn_box a:active {
+  color: #333;
 }
-main #portfolio .project .portfolio_inner .portfolio_left .btn_box button:hover::after, main #portfolio .project .portfolio_inner .portfolio_left .btn_box button:active::after {
+main #portfolio .project .portfolio_inner .portfolio_left .btn_box a:hover::after, main #portfolio .project .portfolio_inner .portfolio_left .btn_box a:active::after {
   transform: translateY(-100%);
 }
 main #portfolio .project .portfolio_inner .portfolio_right {
   width: 50%;
-  background-color: red;
   aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1024px) {
   main #portfolio .project .portfolio_inner .portfolio_right {
@@ -1978,6 +1969,7 @@ main #design {
 }
 @media (max-width: 768px) {
   main #design {
+    padding: 120px 0 80px;
     gap: 0;
   }
 }
@@ -2244,6 +2236,11 @@ main #contact {
     padding: 120px 0;
   }
 }
+@media (max-width: 480px) {
+  main #contact {
+    height: 100vh;
+  }
+}
 main #contact #contact_inner {
   height: 100%;
   padding-top: 100px;
@@ -2425,7 +2422,6 @@ main #contact #contact_inner #contact_box .button {
   justify-content: start;
   border: 1px solid #f5f5f5;
   background-color: rgba(245, 245, 245, 0);
-  cursor: pointer;
   overflow: hidden;
   font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
   font-size: 1em;
