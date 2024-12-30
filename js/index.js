@@ -61,7 +61,7 @@ const cursorSet = () => {
             cursorCircle.style.backgroundColor = '#f5f5f5';
             cursor.style.opacity = '0.5';
             cursor.style.mixBlendMode = '';
-            cursorText.innerHTML = "Scorll"
+            cursorText.innerHTML = "Scroll"
         });
     });
 }
