@@ -284,6 +284,42 @@ body.loading_scroll {
   }
 }
 
+// 이미지 확대 페이지
+#img_page {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(variables.$color-bg-black, 0.8);
+  backdrop-filter: blur(10px);
+  cursor: default;
+  &.visible {
+    display: block;
+  }
+  #img_page_inner {
+    width: 100%;
+    height: 100%;
+    @include mixins.flex-center;
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .close_btn {
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      background: none;
+      border: none;
+      background-image: url(../img/img_close_btn.svg);
+      @include mixins.bg-fixed;
+    }
+  }
+}
 #moving_gradient {
   width: 100%;
   height: 100%;
@@ -1117,6 +1153,7 @@ main {
         position: absolute;
         z-index: -1;
         @include mixins.flex-center;
+        background-color: variables.$color-bg-black;
         filter: grayscale(0.5) brightness(1);
         video {
           width: 100%;
@@ -1432,6 +1469,19 @@ main {
         }
       }
     }
+    #dyson {
+      .portfolio_left > .project_type {
+        background-image: linear-gradient(120deg, #522a86 40%, #e8137b 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    #godiva {
+      .portfolio_left > .project_type {
+        color: #ceb372;
+      }
+    }
   }
   #design {
     width: 100%;
@@ -1632,34 +1682,13 @@ main {
                 );
               }
             }
-            p {
-              margin-top: 12px;
+            p:first-of-type {
+              margin: 12px 0;
               @include mixins.flex-space;
-              .design_title {
-                width: 100%;
-                @include mixins.flex-space;
-                h3 {
-                  @include mixins.font-style(
-                    variables.$font-primary,
-                    24,
-                    variables.$font-weight-regular,
-                    variables.$color-white
-                  );
-                }
-                span {
-                  padding: 6px 12px;
-                  border: 1px solid variables.$color-white;
-                  border-radius: 40px;
-                  opacity: 0.8;
-                  mix-blend-mode: screen;
-                  @include mixins.font-style(
-                    variables.$font-primary,
-                    13,
-                    variables.$font-weight-regular,
-                    variables.$color-white
-                  );
-                }
-              }
+            }
+            p:last-of-type {
+              color: variables.$color-gray;
+              @include mixins.font-size(14);
             }
           }
         }

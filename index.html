@@ -32,6 +32,12 @@
         </div>
         </p>
     </div>
+    <div id="img_page">
+        <div id="img_page_inner">
+            <button class="close_btn"></button>
+            <img src="img/design1.jpg" alt="디자인1">
+        </div>
+    </div>
     <div class="cursor"><span class="circle"></span><span class="text">scroll</span></div>
     <header>
         <nav class="container">
@@ -235,7 +241,7 @@
                             </ul>
                             <p class="project_text">
                                 다이슨 코리아 웹페이지의 오류 수정 사용성 개선 및 리디자인, 코딩을 진행<br>
-                                슬라이더를 제외하고는 플러그인 없이 순수 스크립트를 사용하는데 중점을 둠<br>
+                                슬라이더를 제외한, 다른 요소들은 플러그인 없이 순수 스크립트를 사용하고자 함<br>
                                 ⚙ slick.js
                             </p>
                             <div class="btn_box">
@@ -256,7 +262,7 @@
                     <div class="video_wrap">
                         <div class="video_title">
                         </div>
-                        <video src="img/video/dyson.mp4" autoplay loop muted></video>
+                        <video src="img/video/portfolio.mp4" autoplay loop muted style="opacity: 0.9;"></video>
                     </div>
                     <div class="portfolio_inner container">
                         <div class="portfolio_left">
@@ -265,38 +271,50 @@
                             <ul class="project_info">
                                 <li><span>작업기간</span> 2024년 12월</li>
                                 <li><span>기여도</span> 디자인 100%, 코딩 100%</li>
-                                <li><span>사용프로그램</span> Visual Studio Code, Figma, Illustrator</li>
+                                <li><span>사용프로그램</span> Visual Studio Code, Figma, Illustration</li>
                             </ul>
-                            <p class="project_text">개인 포트폴리오 사이트로 어떤 상황에서도 '유연한 생각'으로 가능성을 만들어내고자 하는 포부를 담음 </p>
+                            <p class="project_text">
+                                유연한 사고로 가능성을 개인 포트폴리오 사이트<br>
+                                다양한 플러그인을 활용해 인터랙티브한 페이지 구현<br>
+                                ⚙ gsap - 스크롤 이벤트, lenis - 부드러운 스크롤, textify - 글씨 애니메이션
+                            </p>
                             <div class="btn_box">
-                                <button class="site_btn">사이트로 이동</button>
-                                <button class="github_btn"><span></span> GitHub</button>
-                                <button class="figma_btn"><span></span> Figma</button>
+                                <a href="https://github.com/Kyeuny/portfolio2024" target="_blank" class="site_btn">사이트로
+                                    이동</a>
+                                <a href="https://github.com/ekingdom94/project_HALO/" target="_blank"
+                                    class="github_btn"><span></span> GitHub</a>
+                                <a href="https://www.figma.com/design/9zAR6gD6uBIFgO2LjM7ddA/Portfolio2024---%EA%B9%80%EC%98%88%EC%9D%80?node-id=0-1"
+                                    target="_blank" class="figma_btn"><span></span> Figma</a>
                             </div>
                         </div>
                         <div class="portfolio_right"></div>
                     </div>
                 </div>
-                <div id="project3" class="project">
+                <div id="godiva" class="project">
                     <div class="video_wrap">
                         <div class="video_title">
                         </div>
-                        <video src="img/video/dyson.mp4" autoplay loop muted></video>
+                        <video src="img/video/godiva.mp4" autoplay loop muted style="opacity: 0.9;"></video>
                     </div>
                     <div class="portfolio_inner container">
                         <div class="portfolio_left">
                             <p class="project_type type_team">Team Project</p>
-                            <h2>프로젝트 이름</h2>
+                            <h2>고디바 클론 코딩 - PC</h2>
                             <ul class="project_info">
-                                <li><span>작업기간</span> 2024년 1월</li>
-                                <li><span>기여도</span> 80%</li>
-                                <li><span>사용프로그램</span> Photoshop, Illustrator</li>
+                                <li><span>작업기간</span> 2024년 11월 (3일)</li>
+                                <li><span>기여도</span> 코딩 100%</li>
+                                <li><span>사용프로그램</span>Visual Studio Code</li>
                             </ul>
-                            <p class="project_text">프로젝트에 대한 설명을 나열하여 작성할 것!<br>프로젝트에 대한 설명을 나열하여 작성할 것!</p>
+                            <p class="project_text">
+                                html과 css 학습 내용 응용하기 위해 고디바 사이트 클론 코딩을 진행<br>
+                                기존의 사이트에는 없던 동적인 이벤트 추가 / 사용성을 고려한 ui 요소 수정<br>
+                                ⚙ swiper.js - 메인 슬라이더 / 서브 메뉴, 제품 슬라이더
+                            </p>
                             <div class="btn_box">
-                                <button class="site_btn">사이트로 이동</button>
-                                <button class="github_btn"><span></span> GitHub</button>
-                                <button class="figma_btn"><span></span> Figma</button>
+                                <a href="https://kyeuny.github.io/godiva-clone" target="_blank" class="site_btn">사이트로
+                                    이동</a>
+                                <a href="https://github.com/Kyeuny/godiva-clone" target="_blank"
+                                    class="github_btn"><span></span> GitHub</a>
                             </div>
                         </div>
                         <div class="portfolio_right"></div>
@@ -315,13 +333,16 @@
                             <ul class="project_info">
                                 <li><span>작업기간</span> 2024년 1월</li>
                                 <li><span>기여도</span> 80%</li>
-                                <li><span>사용프로그램</span> Photoshop, Illustrator</li>
+                                <li><span>사용프로그램</span> Photoshop, Illustration</li>
                             </ul>
                             <p class="project_text">프로젝트에 대한 설명을 나열하여 작성할 것!<br>프로젝트에 대한 설명을 나열하여 작성할 것!</p>
                             <div class="btn_box">
-                                <button class="site_btn">사이트로 이동</button>
-                                <button class="github_btn"><span></span> GitHub</button>
-                                <button class="figma_btn"><span></span> Figma</button>
+                                <a href="https://ekingdom94.github.io/project_HALO/" target="_blank"
+                                    class="site_btn">사이트로 이동</a>
+                                <a href="https://github.com/ekingdom94/project_HALO/" target="_blank"
+                                    class="github_btn"><span></span> GitHub</a>
+                                <a href="https://www.figma.com/design/pz2JCdrHIFt75RER0RDYFL/halo?node-id=679-3818"
+                                    target="_blank" class="figma_btn"><span></span> Figma</a>
                             </div>
                         </div>
                         <div class="portfolio_right"></div>
@@ -339,63 +360,63 @@
             <div id="design_slider" class="swiper">
                 <ul id="design_slider_wrap" class="swiper-wrapper">
                     <li class="swiper-slide">
-                        <img src="img/portfolio_figma_white.svg" alt="" class="img_link">
+                        <img src="img/design1.jpg" alt="파리 올림픽 가상 포스터" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>2024 파리 올림픽 포스터</h3>
+                                <span>홍보 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop, Illustration</p>
                         </div>
                     </li>
                     <li class="swiper-slide">
-                        <img src="" alt="" class="img_link">
+                        <img src="img/design2.jpg" alt="" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>공차 신메뉴 포스터</h3>
+                                <span>상품 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop</p>
                         </div>
                     </li>
                     <li class="swiper-slide">
-                        <img src="" alt="" class="img_link">
+                        <img src="img/design3.jpg" alt="" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>불꽃축제 홍보 포스터</h3>
+                                <span>홍보 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop</p>
                         </div>
                     </li>
                     <li class="swiper-slide">
-                        <img src="" alt="" class="img_link">
+                        <img src="img/design1.jpg" alt="파리 올림픽 가상 포스터" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>2024 파리 올림픽 포스터</h3>
+                                <span>홍보 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop, Illustration</p>
                         </div>
                     </li>
                     <li class="swiper-slide">
-                        <img src="" alt="" class="img_link">
+                        <img src="img/design2.jpg" alt="" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>공차 신메뉴 포스터</h3>
+                                <span>상품 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop</p>
                         </div>
                     </li>
                     <li class="swiper-slide">
-                        <img src="" alt="" class="img_link">
+                        <img src="img/design3.jpg" alt="" class="img_link">
                         <div class="design_bottom">
                             <div class="design_title">
-                                <h3>프로젝트 이름</h3>
-                                <span>상세 페이지</span>
+                                <h3>불꽃축제 홍보 포스터</h3>
+                                <span>홍보 포스터</span>
                             </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustrator</p>
+                            <p><span>사용프로그램</span> Photoshop</p>
                         </div>
                     </li>
                 </ul>

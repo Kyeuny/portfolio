@@ -641,6 +641,48 @@ body.loading_scroll {
   }
 }
 
+#img_page {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: default;
+}
+#img_page.visible {
+  display: block;
+}
+#img_page #img_page_inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#img_page #img_page_inner img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#img_page #img_page_inner .close_btn {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: none;
+  border: none;
+  background-image: url(../img/img_close_btn.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 #moving_gradient {
   width: 100%;
   height: 100%;
@@ -1584,6 +1626,7 @@ main #portfolio .project .video_wrap {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000;
   filter: grayscale(0.5) brightness(1);
 }
 main #portfolio .project .video_wrap video {
@@ -1947,6 +1990,15 @@ main #portfolio .project .portfolio_inner .portfolio_right {
     box-sizing: border-box;
   }
 }
+main #portfolio #dyson .portfolio_left > .project_type {
+  background-image: linear-gradient(120deg, #522a86 40%, #e8137b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main #portfolio #godiva .portfolio_left > .project_type {
+  color: #ceb372;
+}
 main #design {
   width: 100%;
   display: flex;
@@ -2192,38 +2244,15 @@ main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design
   letter-spacing: 0em;
   line-height: 1.5;
 }
-main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p {
-  margin-top: 12px;
+main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p:first-of-type {
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p .design_title {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p .design_title h3 {
-  font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
-  font-size: 1.5em;
-  font-weight: 400;
-  color: #f5f5f5;
-  letter-spacing: 0em;
-  line-height: 1.5;
-}
-main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p .design_title span {
-  padding: 6px 12px;
-  border: 1px solid #f5f5f5;
-  border-radius: 40px;
-  opacity: 0.8;
-  mix-blend-mode: screen;
-  font-family: "Pretendard Local", "Pretendard Variable", sans-serif;
-  font-size: 0.8125em;
-  font-weight: 400;
-  color: #f5f5f5;
-  letter-spacing: 0em;
-  line-height: 1.5;
+main #design #design_slider.swiper #design_slider_wrap.swiper-wrapper li .design_bottom p:last-of-type {
+  color: #d9d9d9;
+  font-size: 0.875em;
 }
 main #contact {
   height: calc(100vh - 93px);

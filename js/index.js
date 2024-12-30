@@ -316,4 +316,21 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
+    //design 이미지 클릭시 전체 화면 ----------------------------
+    const imgPage = document.querySelector('#img_page');
+    const imgPageIn = imgPage.querySelector('img');
+    const imgBox = document.querySelectorAll('#design_slider li>img')
+
+    imgBox.forEach(img => {
+        img.addEventListener('click', () => {
+            const imgSrc = img.getAttribute('src');
+            imgPageIn.setAttribute('src', imgSrc);
+            imgPage.classList.add('visible');
+        });
+    });
+
+    imgPage.addEventListener('click', function () {
+        this.classList.remove('visible');
+    });
+
 });
