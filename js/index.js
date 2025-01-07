@@ -217,9 +217,14 @@ spinningWrap.style.height = document.getElementById('skills').offsetHeight + 'px
 
 const spinningShapeHeight = spinningShape.offsetHeight;
 
+const spinningMobile = window.matchMedia("(max-width: 768px)").matches; //모바일 대응
+
+const rotation = spinningMobile ? 300 : 500; // 모바일에서 회전 각도 감소
+const scrubValue = spinningMobile ? 4 : 2; // 모바일에서 scrub 증가
+
 const tl = gsap.timeline({
     scrollTrigger: {
-        scrub: 2,
+        scrub: scrubValue,
         pin: false,
         trigger: ".spinning_shape",
         start: "0% 20%",
@@ -228,9 +233,10 @@ const tl = gsap.timeline({
 
 tl.to(".spinning_shape", {
     y: () => spinningWrap.offsetHeight - spinningShapeHeight,
-    rotateZ: 500,
+    rotateZ: rotation,
     ease: "power1.out"
 });
+
 
 
 // portfolio 섹션 스크롤 슬라이드 ---------------------------------------------
