@@ -485,6 +485,7 @@ body::-webkit-scrollbar {
     margin-left: 0px;
     background-color: rgba(245, 245, 245, 0);
     background-image: url(../img/scrolldown_icon_white.svg);
+    opacity: 0;
     background-size: 30%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1730,7 +1731,7 @@ main #portfolio .project .portfolio_inner .portfolio_left {
 }
 @media (max-width: 480px) {
   main #portfolio .project .portfolio_inner .portfolio_left {
-    gap: 12px;
+    gap: 20px;
     padding-bottom: 20px;
   }
 }

@@ -130,6 +130,7 @@ body::-webkit-scrollbar {
     margin-left: -0px;
     background-color: rgba(variables.$color-white, 0);
     background-image: url(../img/scrolldown_icon_white.svg);
+    opacity: 0;
     background-size: 30%;
     @include mixins.bg-fixed;
     &::after {
@@ -1230,7 +1231,7 @@ main {
             height: fit-content;
           }
           @media (max-width: 480px) {
-            gap: 12px;
+            gap: 20px;
             padding-bottom: 20px;
           }
           .project_type {
