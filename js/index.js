@@ -269,6 +269,8 @@ document.addEventListener("DOMContentLoaded", function () {
         pin: true,
         pinSpacing: false,
         snap: 1 / 5,
+        onEnter: () => projectVideo.play(),
+        onEnterBack: () => projectVideo.play(),
       });
     });
   });
