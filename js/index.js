@@ -211,8 +211,8 @@ const spinningShapeHeight = spinningShape.offsetHeight;
 
 const spinningMobile = window.matchMedia("(max-width: 768px)").matches; //모바일 대응
 
-const rotation = spinningMobile ? 300 : 500; // 모바일에서 회전 각도 감소
-const scrubValue = spinningMobile ? 4 : 2; // 모바일에서 scrub 증가
+const rotation = spinningMobile ? 1000 : 500; // 모바일에서 회전 각도 감소
+const scrubValue = spinningMobile ? 20 : 2; // 모바일에서 scrub 증가
 const startValue = spinningMobile ? "0% 0%" : "0% 20%";
 
 const tl = gsap.timeline({
@@ -269,10 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
         pin: true,
         pinSpacing: false,
         snap: 1 / 5,
-        onEnter: () => projectVideo.play(),
-        onLeave: () => projectVideo.pause(),
-        onEnterBack: () => projectVideo.play(),
-        onLeaveBack: () => projectVideo.pause(),
       });
     });
   });
