@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>김예은의 포트 폴리오-Think Flexible Make it happen!</title>
-    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="scss/style.css" />
 
     <script src="js/jquery-1.12.3.js" defer></script>
 
@@ -17,443 +16,617 @@
 
     <script src="https://cdn.jsdelivr.net/npm/textify.js@2.3.2/dist/Textify.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="js/index.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="loading_page">
-        <div class="loading_inner">
-            <h1>KIM YEEUN<br>PORTFOLIO 2024</h1>
-            <p>WEB PULISHER ｜ DESIGNER</p>
-            <span class="loading_circle"></span>
-        </div>
-        </p>
+      <div class="loading_inner">
+        <h1>KIM YEEUN<br />PORTFOLIO 2024</h1>
+        <p>WEB PULISHER ｜ DESIGNER</p>
+        <span class="loading_circle"></span>
+      </div>
     </div>
     <div id="img_page">
-        <div id="img_page_inner">
-            <button class="close_btn"></button>
-            <img src="img/design1.jpg" alt="디자인1">
-        </div>
+      <div id="img_page_inner">
+        <button class="close_btn"></button>
+        <img src="img/design1.jpg" alt="디자인1" />
+      </div>
     </div>
-    <div class="cursor"><span class="circle"></span><span class="text">scroll</span></div>
+    <div class="cursor">
+      <span class="circle"></span><span class="text">scroll</span>
+    </div>
     <header>
-        <nav class="container">
-            <ul id="nav_default">
-                <li><a href="#" onclick="event.preventDefault();">KIM YEEUN</a></li>
-                <li>2024</li>
-                <li>PORTFOLIO</li>
-            </ul>
-            <div id="nav_scroll">
-                <ul>
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#profile">profile</a></li>
-                    <li><a href="#skills">skills</a></li>
-                    <li><a href="#portfolio">portfolio</a></li>
-                    <li><a href="#design">design</a></li>
-                    <li><a href="#contact">contact</a></li>
-                    <!-- <li style="width: 56px;"></li> -->
-                </ul>
-            </div>
-            <!-- <button class="header_fixed"><a href="#" onclick="event.preventDefault();">portfolio</a></button> -->
-        </nav>
+      <nav class="container">
+        <ul id="nav_default">
+          <li><a href="#" onclick="event.preventDefault();">KIM YEEUN</a></li>
+          <li>2024</li>
+          <li>PORTFOLIO</li>
+        </ul>
+        <div id="nav_scroll">
+          <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#profile">profile</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#contact">contact</a></li>
+            <!-- <li style="width: 56px;"></li> -->
+          </ul>
+        </div>
+        <!-- <button class="header_fixed"><a href="#" onclick="event.preventDefault();">portfolio</a></button> -->
+      </nav>
     </header>
     <div id="moving_gradient">
-        <span class="circle_gradient1"></span>
-        <span class="circle_gradient2"></span>
+      <span class="circle_gradient1"></span>
+      <span class="circle_gradient2"></span>
     </div>
     <main id="contents">
-        <section id="home" class="container">
-            <div id="home_inner">
-                <h1 class="main_title">Think <img src="img/home_flexible.png" alt="Flexible"></h1>
-                <h1 class="moving_title">Make it happen!</h1>
-                <span class="sq_shape"></span>
-                <span class="star_shape"></span>
-            </div>
-        </section>
-        <section id="profile" class="container">
-            <div id="profile_top">
-                <h2>Hello,</h2>
-                <h3>안녕하세요 웹 퍼블리셔 김예은 입니다</h3>
-                <p>
-                    저는 빠르게 변화하는 환경 속에서도 유연하게 대응하고 꾸준히 배우며 가능성을 확장하고,더 큰 가치를 만들어가는 사람이 되고자 합니다<br>
-                    '첫 단추부터 잘 꿰야 한다'는 마음으로 철저한 계획과 가이드를 바탕으로 기초부터 탄탄한 웹 구조를 구축하는 것을 목표로 합니다
-                </p>
-                <span class="star_shape"></span>
-            </div>
-            <div id="profile_bottom">
-                <div>
-                    <h4>Profile</h4>
-                    <table>
-                        <tr>
-                            <th>생년월일</th>
-                            <td>1998.06.05</td>
-                        </tr>
-                        <tr>
-                            <th>전화번호</th>
-                            <td>010-8445-5206</td>
-                        </tr>
-                        <tr>
-                            <th>이메일</th>
-                            <td>aappllee009@gmail.com</td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <h4>Education</h4>
-                    <table>
-                        <tr>
-                            <th>대화고등학교 졸업</th>
-                            <td>2014. 03 -<br> 2017. 02</td>
-                        </tr>
-                        <tr>
-                            <th>대진대학교<br> 식품영양학과 졸업</th>
-                            <td>2017. 03 -<br> 2021. 02</td>
-                        </tr>
-                        <tr>
-                            <th>더조은컴퓨터아트학원<br> UI/UX 웹 퍼블리셔 / 웹 디자인 교육</th>
-                            <td>2024. 08 –<br> 2025. 01</td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <h4>Profile</h4>
-                    <table>
-                        <tr>
-                            <th>GTQ 포토샵 1급</th>
-                            <td>2020.10</td>
-                        </tr>
-                        <tr>
-                            <th>GTG 일러스트 1급</th>
-                            <td>2021.05</td>
-                        </tr>
-                        <tr>
-                            <th>웹디자인기능사</th>
-                            <td>2021.07</td>
-                        </tr>
-                        <tr>
-                            <th>컴퓨터그래픽스운용기능사</th>
-                            <td>2024.09</td>
-                        </tr>
-                        <tr>
-                            <th>자동차 운전면허 2종 보통</th>
-                            <td>2023.08</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="container">
-            <!-- 스크롤 시 도형이 회전하며 내려가는 스크립트 -->
-            <div id="spinning_wrap">
-                <span class="spinning_shape"></span>
-            </div>
-            <h2>I can use theese <span></span></h2>
-            <div id="skills_inner" class="container grid-container">
-                <div class="skills_box" id="html">
-                    <div>
-                        <h3>HTML</h3>
-                        <i class="skills-icon" data-skill="HTML"><img src="img/skills_icon_html.svg" alt="html"></i>
-                    </div>
-                    <p>시멘틱 태그에 대한 깊은 이해를 바탕으로 직관적이고 접근성 높은 구조를 작성할 수 있으며, 유지보수가 쉽고 협업에 최적화된 코드를 구현할 수 있습니다</p>
-                </div>
-                <div class="skills_box" id="css">
-                    <div>
-                        <h3>CSS</h3>
-                        <i class="skills-icon" data-skill="CSS"><img src="img/skills_icon_css.svg" alt="css"></i>
-                    </div>
-                    <p>속성과 값에 대한 이해를 바탕으로 기획한 디자인을 구현하며, 다양한 해상도에 대응하는 반응형 웹과 애니메이션을 활용한 동적인 사용자 경험을 제공합니다</p>
-                </div>
-                <div class="skills_box" id="sass">
-                    <div>
-                        <h3>SCSS</h3>
-                        <i class="skills-icon" data-skill="SCSS"><img src="img/skills_icon_scss.svg" alt="scss"></i>
-                    </div>
-                    <p> 중첩 구조로 정확한 태그 경로를 신속하게 지정할 수 있으며며, 변수와 믹스인을 통해 코드 재사용성과 유지보수 효율성을 높입니다.</p>
-                </div>
-                <div class="skills_box" id="javascript">
-                    <div>
-                        <h3>JavaScript</h3>
-                        <i class="skills-icon" data-skill="JavaScript"><img src="img/skills_icon_js.svg"
-                                alt="javascript"></i>
-                    </div>
-                    <p>표준 문법을 준수하며, ES6+을 활용해 가독성과 유지보수성이 높은 코드를 작성할 수 있습니다. 이벤트 처리를 통해 동적인 웹 인터페이스를 구현합니다</p>
-                </div>
-                <div class="skills_box" id="jquery">
-                    <div>
-                        <h3>jQuery</h3>
-                        <i class="skills-icon" data-skill="jQuery"><img src="img/skills_icon_jq.svg" alt="jQuery"></i>
-                    </div>
-                    <p>애니메이션, DOM 조작, 이벤트 관리를 효율적으로 구현할 수 있으며, 간결하고 최적화된 코드를 작성하여 작업의 완성도를 높일 수 있습니다.</p>
-                </div>
-                <div class="skills_box" id="react">
-                    <div>
-                        <h3>React</h3>
-                        <i class="skills-icon" data-skill="React"><img src="img/skills_icon_react.svg" alt="react"></i>
-                    </div>
-                    <p>컴포넌트 기반의 재사용 가능한 UI를 효율적으로 작성하며, 데이터 변화에 따라 동적으로 렌더링을 처리해 유지보수성이 높은 웹 애플리케이션을 구현합니다</p>
-                </div>
-                <div class="skills_box" id="figma">
-                    <div>
-                        <h3>Figma</h3>
-                        <i class="skills-icon" data-skill="Figma"><img src="img/skills_icon_figma.svg" alt="figma"></i>
-                    </div>
-                    <p>스타일 가이드를 통해 일관성 있는 UI 디자인을 구현할 수 있으며, 오토 레이아웃을 활용해 디바이스 크기에 유연하게 대응합니다</p>
-                </div>
-                <div class="skills_box" id="photoshop">
-                    <div>
-                        <h3>Photoshop</h3>
-                        <i class="skills-icon" data-skill="Photoshop"><img src="img/skills_icon_ps.svg"
-                                alt="photoshop"></i>
-                    </div>
-                    <p>이미지 편집, 보정, 레이아웃 디자인등 다양한 작업을 수행하며, 구상한 아이디어를 능숙하게 구현해 완성도 높은 결과물을 제작할 수 있습니다</p>
-                </div>
-                <div class="skills_box" id="illustration">
-                    <div>
-                        <h3>Illustration</h3>
-                        <i class="skills-icon" data-skill="Illustration"><img src="img/skills_icon_ai.svg"
-                                alt="illustration"></i>
-                    </div>
-                    <p>벡터 기반의 작업을 통해 로고 디자인, 아이콘 제작, 인포그래픽 등 다양한 시각 자료를 제작할 수 있는 역량을 보유하고 있습니다</p>
-                </div>
-            </div>
-        </section>
-        <!-- 스크롤 스크립트 사용하여 원페이지 -->
-        <section id="portfolio" class="horizontal">
-            <div id="project_wrap">
-                <div id="dyson" class="project">
-                    <div class="video_wrap">
-                        <div class="video_title">
-                        </div>
-                        <video src="img/video/dyson.mp4" autoplay loop muted></video>
-                    </div>
-                    <div class="portfolio_inner container">
-                        <div class="portfolio_left">
-                            <p class="project_type type_team">Team Project</p>
-                            <h2>Dyson 코리아 리뉴얼 - 반응형</h2>
-                            <ul class="project_info">
-                                <li><span>팀 인원</span> 3명</li>
-                                <li><span>작업기간</span> 2024년 11월 - 12월</li>
-                                <li><span>기여도</span> 코딩 50% ｜ 디자인 90%</li>
-                                <li><span>사용프로그램</span> Visual Studio Code, Figma, GitHub</li>
-                            </ul>
-                            <p class="project_text">
-                                다이슨 코리아 웹페이지의 오류 수정 사용성 개선 및 리디자인, 코딩을 진행<br>
-                                슬라이더를 제외한, 다른 요소들은 플러그인 없이 순수 스크립트를 사용하고자 함<br>
-                                ⚙ slick.js
-                            </p>
-                            <div class="btn_box">
-                                <a href="https://ekingdom94.github.io/project_HALO/" target="_blank"
-                                    class="site_btn">사이트로 이동</a>
-                                <a href="https://github.com/ekingdom94/project_HALO/" target="_blank"
-                                    class="github_btn"><span></span> GitHub</a>
-                                <a href="https://www.figma.com/design/pz2JCdrHIFt75RER0RDYFL/halo?node-id=679-3818"
-                                    target="_blank" class="figma_btn"><span></span> Figma</a>
-                            </div>
-                        </div>
-                        <div class="portfolio_right">
-                            <img src="img/project_dyson.png" alt="dyson" class="mobile_img">
-                        </div>
-                    </div>
-                </div>
-                <div id="my_portfolio" class="project">
-                    <div class="video_wrap">
-                        <div class="video_title">
-                        </div>
-                        <video src="img/video/portfolio.mp4" autoplay loop muted style="opacity: 0.9;"></video>
-                    </div>
-                    <div class="portfolio_inner container">
-                        <div class="portfolio_left">
-                            <p class="project_type type_team" style="color:#45ef55;">Personal Project</p>
-                            <h2>Think Flexible Make it happen!</h2>
-                            <ul class="project_info">
-                                <li><span>작업기간</span> 2024년 12월</li>
-                                <li><span>기여도</span> 디자인 100%, 코딩 100%</li>
-                                <li><span>사용프로그램</span> Visual Studio Code, Figma, Illustration</li>
-                            </ul>
-                            <p class="project_text">
-                                유연한 사고로 가능성을 개인 포트폴리오 사이트<br>
-                                다양한 플러그인을 활용해 인터랙티브한 페이지 구현<br>
-                                ⚙ gsap - 스크롤 이벤트, lenis - 부드러운 스크롤, textify - 글씨 애니메이션
-                            </p>
-                            <div class="btn_box">
-                                <a href="https://github.com/Kyeuny/portfolio2024" target="_blank" class="site_btn">사이트로
-                                    이동</a>
-                                <a href="https://github.com/ekingdom94/project_HALO/" target="_blank"
-                                    class="github_btn"><span></span> GitHub</a>
-                                <a href="https://www.figma.com/design/9zAR6gD6uBIFgO2LjM7ddA/Portfolio2024---%EA%B9%80%EC%98%88%EC%9D%80?node-id=0-1"
-                                    target="_blank" class="figma_btn"><span></span> Figma</a>
-                            </div>
-                        </div>
-                        <div class="portfolio_right"></div>
-                    </div>
-                </div>
-                <div id="godiva" class="project">
-                    <div class="video_wrap">
-                        <div class="video_title">
-                        </div>
-                        <video src="img/video/godiva.mp4" autoplay loop muted style="opacity: 0.9;"></video>
-                    </div>
-                    <div class="portfolio_inner container">
-                        <div class="portfolio_left">
-                            <p class="project_type type_team">Team Project</p>
-                            <h2>고디바 클론 코딩 - PC</h2>
-                            <ul class="project_info">
-                                <li><span>작업기간</span> 2024년 11월 (3일)</li>
-                                <li><span>기여도</span> 코딩 100%</li>
-                                <li><span>사용프로그램</span>Visual Studio Code</li>
-                            </ul>
-                            <p class="project_text">
-                                html과 css 학습 내용 응용하기 위해 고디바 사이트 클론 코딩을 진행<br>
-                                기존의 사이트에는 없던 동적인 이벤트 추가 / 사용성을 고려한 ui 요소 수정<br>
-                                ⚙ swiper.js - 메인 슬라이더 / 서브 메뉴, 제품 슬라이더
-                            </p>
-                            <div class="btn_box">
-                                <a href="https://kyeuny.github.io/godiva-clone" target="_blank" class="site_btn">사이트로
-                                    이동</a>
-                                <a href="https://github.com/Kyeuny/godiva-clone" target="_blank"
-                                    class="github_btn"><span></span> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="portfolio_right"></div>
-                    </div>
-                </div>
-                <div id="project4" class="project">
-                    <div class="video_wrap">
-                        <div class="video_title">
-                        </div>
-                        <video src="img/video/dyson.mp4" autoplay loop muted></video>
-                    </div>
-                    <div class="portfolio_inner container">
-                        <div class="portfolio_left">
-                            <p class="project_type type_team">Team Project</p>
-                            <h2>프로젝트 이름</h2>
-                            <ul class="project_info">
-                                <li><span>작업기간</span> 2024년 1월</li>
-                                <li><span>기여도</span> 80%</li>
-                                <li><span>사용프로그램</span> Photoshop, Illustration</li>
-                            </ul>
-                            <p class="project_text">프로젝트에 대한 설명을 나열하여 작성할 것!<br>프로젝트에 대한 설명을 나열하여 작성할 것!</p>
-                            <div class="btn_box">
-                                <a href="https://ekingdom94.github.io/project_HALO/" target="_blank"
-                                    class="site_btn">사이트로 이동</a>
-                                <a href="https://github.com/ekingdom94/project_HALO/" target="_blank"
-                                    class="github_btn"><span></span> GitHub</a>
-                                <a href="https://www.figma.com/design/pz2JCdrHIFt75RER0RDYFL/halo?node-id=679-3818"
-                                    target="_blank" class="figma_btn"><span></span> Figma</a>
-                            </div>
-                        </div>
-                        <div class="portfolio_right"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="design">
-            <div class="design_title">
-                <img src="img/design.png" alt="design">
-                <h2>Work</h2>
-            </div>
-            <span class="design_shape1"><img src="img/design_shap1.svg" alt=""></span>
-            <span class="design_shape2"><img src="img/design_shap2.svg" alt=""></span>
-            <div id="design_slider" class="swiper">
-                <ul id="design_slider_wrap" class="swiper-wrapper">
-                    <li class="swiper-slide">
-                        <img src="img/design1.jpg" alt="파리 올림픽 가상 포스터" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>2024 파리 올림픽 포스터</h3>
-                                <span>홍보 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustration</p>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="img/design2.jpg" alt="" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>공차 신메뉴 포스터</h3>
-                                <span>상품 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop</p>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="img/design3.jpg" alt="" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>불꽃축제 홍보 포스터</h3>
-                                <span>홍보 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop</p>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="img/design1.jpg" alt="파리 올림픽 가상 포스터" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>2024 파리 올림픽 포스터</h3>
-                                <span>홍보 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop, Illustration</p>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="img/design2.jpg" alt="" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>공차 신메뉴 포스터</h3>
-                                <span>상품 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop</p>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="img/design3.jpg" alt="" class="img_link">
-                        <div class="design_bottom">
-                            <div class="design_title">
-                                <h3>불꽃축제 홍보 포스터</h3>
-                                <span>홍보 포스터</span>
-                            </div>
-                            <p><span>사용프로그램</span> Photoshop</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="contact">
-            <div id="contact_inner" class="container">
-                <span id="contact_shape1"></span>
-                <span id="contact_shape2"></span>
-                <div class="contact_title">
-                    <h2><img src="img/contact_thanksfor.png" alt="Thanks for">Checking it out!</h2>
-                    <p>유연한 사고로 가능성을 확장하고자 하는 김예은이였습니다</p>
-                </div>
-                <div id="contact_box">
-                    <a href="tel:+01084455206" class="button"><span class="tel_icon"></span>010-8445-5206</a>
-                    <a href="mailto:aappllee009@gmail.com" class="button"><span
-                            class="email_icon"></span>aappllee009@gmail.com</a>
-                </div>
-            </div>
-        </section>
-        <div class="contact_loop">
-            <div class="loop_text">PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM
-                YEEUN <span></span></div>
-            <div class="loop_text">PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM
-                YEEUN <span></span></div>
-            <div class="loop_text">PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM
-                YEEUN <span></span></div>
-            <div class="loop_text">PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM
-                YEEUN <span></span></div>
+      <section id="home" class="container">
+        <div id="home_inner">
+          <h1 class="main_title">
+            Think <img src="img/home_flexible.png" alt="Flexible" />
+          </h1>
+          <h1 class="moving_title">Make it happen!</h1>
+          <span class="sq_shape"></span>
+          <span class="star_shape"></span>
         </div>
+      </section>
+      <section id="profile" class="container">
+        <div id="profile_top">
+          <h2>Hello,</h2>
+          <h3>안녕하세요 웹 퍼블리셔 김예은 입니다</h3>
+          <p>
+            저는 빠르게 변화하는 환경 속에서도 유연하게 대응하고 꾸준히 배우며
+            가능성을 확장하고,더 큰 가치를 만들어가는 사람이 되고자 합니다<br />
+            '첫 단추부터 잘 꿰야 한다'는 마음으로 철저한 계획과 가이드를
+            바탕으로 기초부터 탄탄한 웹 구조를 구축하는 것을 목표로 합니다
+          </p>
+          <span class="star_shape"></span>
+        </div>
+        <div id="profile_bottom">
+          <div>
+            <h4>Profile</h4>
+            <table>
+              <tr>
+                <th>생년월일</th>
+                <td>1998.06.05</td>
+              </tr>
+              <tr>
+                <th>전화번호</th>
+                <td>010-8445-5206</td>
+              </tr>
+              <tr>
+                <th>이메일</th>
+                <td>aappllee009@gmail.com</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <h4>Education</h4>
+            <table>
+              <tr>
+                <th>대화고등학교 졸업</th>
+                <td>
+                  2014. 03 -<br />
+                  2017. 02
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  대진대학교<br />
+                  식품영양학과 졸업
+                </th>
+                <td>
+                  2017. 03 -<br />
+                  2021. 02
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  더조은컴퓨터아트학원<br />
+                  UI/UX 웹 퍼블리셔 / 웹 디자인 교육
+                </th>
+                <td>
+                  2024. 08 –<br />
+                  2025. 01
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <h4>Profile</h4>
+            <table>
+              <tr>
+                <th>GTQ 포토샵 1급</th>
+                <td>2020. 10</td>
+              </tr>
+              <tr>
+                <th>GTG 일러스트 1급</th>
+                <td>2021. 05</td>
+              </tr>
+              <tr>
+                <th>웹디자인기능사</th>
+                <td>2021. 07</td>
+              </tr>
+              <tr>
+                <th>컴퓨터그래픽스운용기능사</th>
+                <td>2024. 09</td>
+              </tr>
+              <tr>
+                <th>자동차 운전면허 2종 보통</th>
+                <td>2023. 08</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="container">
+        <!-- 스크롤 시 도형이 회전하며 내려가는 스크립트 -->
+        <div id="spinning_wrap">
+          <span class="spinning_shape"></span>
+        </div>
+        <h2>I can use theese <span></span></h2>
+        <div id="skills_inner" class="container grid-container">
+          <div class="skills_box" id="html">
+            <div>
+              <h3>HTML</h3>
+              <i class="skills-icon" data-skill="HTML"
+                ><img src="img/skills_icon_html.svg" alt="html"
+              /></i>
+            </div>
+            <p>
+              시멘틱 태그에 대한 깊은 이해를 바탕으로 직관적이고 접근성 높은
+              구조를 작성할 수 있으며, 유지보수가 쉽고 협업에 최적화된 코드를
+              구현할 수 있습니다
+            </p>
+          </div>
+          <div class="skills_box" id="css">
+            <div>
+              <h3>CSS</h3>
+              <i class="skills-icon" data-skill="CSS"
+                ><img src="img/skills_icon_css.svg" alt="css"
+              /></i>
+            </div>
+            <p>
+              속성과 값에 대한 이해를 바탕으로 기획한 디자인을 구현하며, 다양한
+              해상도에 대응하는 반응형 웹과 애니메이션을 활용한 동적인 사용자
+              경험을 제공합니다
+            </p>
+          </div>
+          <div class="skills_box" id="sass">
+            <div>
+              <h3>SCSS</h3>
+              <i class="skills-icon" data-skill="SCSS"
+                ><img src="img/skills_icon_scss.svg" alt="scss"
+              /></i>
+            </div>
+            <p>
+              중첩 구조로 정확한 태그 경로를 신속하게 지정할 수 있으며, 변수와
+              믹스인을 통해 코드 재사용성과 유지보수 효율성을 높입니다.
+            </p>
+          </div>
+          <div class="skills_box" id="javascript">
+            <div>
+              <h3>JavaScript</h3>
+              <i class="skills-icon" data-skill="JavaScript"
+                ><img src="img/skills_icon_js.svg" alt="javascript"
+              /></i>
+            </div>
+            <p>
+              표준 문법을 준수하며, ES6+을 활용해 가독성과 유지보수성이 높은
+              코드를 작성할 수 있습니다. 이벤트 처리를 통해 동적인 웹
+              인터페이스를 구현합니다
+            </p>
+          </div>
+          <div class="skills_box" id="jquery">
+            <div>
+              <h3>jQuery</h3>
+              <i class="skills-icon" data-skill="jQuery"
+                ><img src="img/skills_icon_jq.svg" alt="jQuery"
+              /></i>
+            </div>
+            <p>
+              애니메이션, DOM 조작, 이벤트 관리를 효율적으로 구현할 수 있으며,
+              간결하고 최적화된 코드를 작성하여 작업의 완성도를 높일 수
+              있습니다.
+            </p>
+          </div>
+          <div class="skills_box" id="react">
+            <div>
+              <h3>React</h3>
+              <i class="skills-icon" data-skill="React"
+                ><img src="img/skills_icon_react.svg" alt="react"
+              /></i>
+            </div>
+            <p>
+              컴포넌트 기반의 재사용 가능한 UI를 효율적으로 작성하며, 데이터
+              변화에 따라 동적으로 렌더링을 처리해 유지보수성이 높은 웹
+              애플리케이션을 구현합니다
+            </p>
+          </div>
+          <div class="skills_box" id="figma">
+            <div>
+              <h3>Figma</h3>
+              <i class="skills-icon" data-skill="Figma"
+                ><img src="img/skills_icon_figma.svg" alt="figma"
+              /></i>
+            </div>
+            <p>
+              스타일 가이드를 통해 일관성 있는 UI 디자인을 구현할 수 있으며,
+              오토 레이아웃을 활용해 디바이스 크기에 유연하게 대응합니다
+            </p>
+          </div>
+          <div class="skills_box" id="photoshop">
+            <div>
+              <h3>Photoshop</h3>
+              <i class="skills-icon" data-skill="Photoshop"
+                ><img src="img/skills_icon_ps.svg" alt="photoshop"
+              /></i>
+            </div>
+            <p>
+              이미지 편집, 보정, 레이아웃 디자인등 다양한 작업을 수행하며,
+              구상한 아이디어를 능숙하게 구현해 완성도 높은 결과물을 제작할 수
+              있습니다
+            </p>
+          </div>
+          <div class="skills_box" id="illustration">
+            <div>
+              <h3>Illustration</h3>
+              <i class="skills-icon" data-skill="Illustration"
+                ><img src="img/skills_icon_ai.svg" alt="illustration"
+              /></i>
+            </div>
+            <p>
+              벡터 기반의 작업을 통해 로고 디자인, 아이콘 제작, 인포그래픽 등
+              다양한 시각 자료를 제작할 수 있는 역량을 보유하고 있습니다
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- 스크롤 스크립트 사용하여 원페이지 -->
+      <section id="portfolio" class="horizontal">
+        <div id="project_wrap">
+          <div id="dyson" class="project">
+            <div class="video_wrap">
+              <div class="video_title"></div>
+              <video src="img/video/dyson.mp4" autoplay loop muted></video>
+            </div>
+            <div class="portfolio_inner container">
+              <div class="portfolio_left">
+                <p class="project_type type_team">Team Project</p>
+                <h2>Dyson 코리아 리뉴얼 - 반응형</h2>
+                <ul class="project_info">
+                  <li><span>팀 인원</span> 3명</li>
+                  <li><span>작업기간</span> 2024년 11월 - 12월</li>
+                  <li>
+                    <span>기여도</span> 코딩 50%,<br />
+                    디자인 90%
+                  </li>
+                  <li>
+                    <span>사용프로그램</span> Visual Studio Code, Figma, GitHub
+                  </li>
+                </ul>
+                <p class="project_text">
+                  다이슨 코리아 웹페이지의 오류 수정 사용성 개선 및 리디자인,
+                  코딩을 진행<br />
+                  JavaScript, jQuery를 활용에 중점을 두었으며 최소한의
+                  플러그인을 사용하고자 함<br />
+                  ⚙ slick.js
+                </p>
+                <div class="btn_box">
+                  <a
+                    href="https://ekingdom94.github.io/project_HALO/"
+                    target="_blank"
+                    class="site_btn"
+                    >사이트로 이동</a
+                  >
+                  <a
+                    href="https://github.com/ekingdom94/project_HALO/"
+                    target="_blank"
+                    class="github_btn"
+                    ><span></span> GitHub</a
+                  >
+                  <a
+                    href="https://www.figma.com/design/pz2JCdrHIFt75RER0RDYFL/halo?node-id=679-3818"
+                    target="_blank"
+                    class="figma_btn"
+                    ><span></span> Figma</a
+                  >
+                </div>
+              </div>
+              <div class="portfolio_right">
+                <img
+                  src="img/project_dyson.png"
+                  alt="dyson"
+                  class="mobile_img"
+                />
+              </div>
+            </div>
+          </div>
+          <div id="my_portfolio" class="project">
+            <div class="video_wrap">
+              <div class="video_title"></div>
+              <video
+                src="img/video/portfolio.mp4"
+                autoplay
+                loop
+                muted
+                style="opacity: 0.9"
+              ></video>
+            </div>
+            <div class="portfolio_inner container">
+              <div class="portfolio_left">
+                <p class="project_type type_team" style="color: #45ef55">
+                  Personal Project
+                </p>
+                <h2>Think Flexible Make it happen!</h2>
+                <ul class="project_info">
+                  <li><span>작업기간</span> 2024년 12월</li>
+                  <li>
+                    <span>기여도</span> 디자인 100%<br />
+                    코딩 100%
+                  </li>
+                  <li>
+                    <span>사용프로그램</span> Visual Studio Code, Figma,
+                    Illustration
+                  </li>
+                </ul>
+                <p class="project_text">
+                  유연한 사고로 가능성을 개인 포트폴리오 사이트<br />
+                  다양한 플러그인을 활용해 인터랙티브한 페이지 구현<br />
+                  ⚙ gsap - 스크롤 이벤트, textify - 글씨 애니메이션
+                </p>
+                <div class="btn_box">
+                  <a
+                    href="https://github.com/Kyeuny/portfolio2024"
+                    target="_blank"
+                    class="site_btn"
+                    >사이트로 이동</a
+                  >
+                  <a
+                    href="https://github.com/ekingdom94/project_HALO/"
+                    target="_blank"
+                    class="github_btn"
+                    ><span></span> GitHub</a
+                  >
+                  <a
+                    href="https://www.figma.com/design/9zAR6gD6uBIFgO2LjM7ddA/Portfolio2024---%EA%B9%80%EC%98%88%EC%9D%80?node-id=0-1"
+                    target="_blank"
+                    class="figma_btn"
+                    ><span></span> Figma</a
+                  >
+                </div>
+              </div>
+              <div class="portfolio_right"></div>
+            </div>
+          </div>
+          <div id="godiva" class="project">
+            <div class="video_wrap">
+              <div class="video_title"></div>
+              <video
+                src="img/video/godiva.mp4"
+                autoplay
+                loop
+                muted
+                style="opacity: 0.9"
+              ></video>
+            </div>
+            <div class="portfolio_inner container">
+              <div class="portfolio_left">
+                <p class="project_type type_team">Team Project</p>
+                <h2>고디바 클론 코딩 - PC</h2>
+                <ul class="project_info">
+                  <li><span>작업기간</span> 2024년 11월 (3일)</li>
+                  <li><span>기여도</span> 코딩 100%</li>
+                  <li><span>사용프로그램</span>Visual Studio Code</li>
+                </ul>
+                <p class="project_text">
+                  html과 css 학습 내용 응용하기 위해 고디바 사이트 클론 코딩을
+                  진행<br />
+                  기존의 사이트에는 없던 동적인 이벤트 추가 / 사용성을 고려한 ui
+                  요소 수정<br />
+                  ⚙ swiper.js - 메인 슬라이더 / 서브 메뉴, 제품 슬라이더
+                </p>
+                <div class="btn_box">
+                  <a
+                    href="https://kyeuny.github.io/godiva-clone"
+                    target="_blank"
+                    class="site_btn"
+                    >사이트로 이동</a
+                  >
+                  <a
+                    href="https://github.com/Kyeuny/godiva-clone"
+                    target="_blank"
+                    class="github_btn"
+                    ><span></span> GitHub</a
+                  >
+                </div>
+              </div>
+              <div class="portfolio_right"></div>
+            </div>
+          </div>
+          <div id="project4" class="project">
+            <div class="video_wrap">
+              <div class="video_title"></div>
+              <video src="img/video/dyson.mp4" autoplay loop muted></video>
+            </div>
+            <div class="portfolio_inner container">
+              <div class="portfolio_left">
+                <p class="project_type type_team">Team Project</p>
+                <h2>프로젝트 이름</h2>
+                <ul class="project_info">
+                  <li><span>작업기간</span> 2024년 1월</li>
+                  <li><span>기여도</span> 80%</li>
+                  <li><span>사용프로그램</span> Photoshop, Illustration</li>
+                </ul>
+                <p class="project_text">
+                  프로젝트에 대한 설명을 나열하여 작성할 것!<br />프로젝트에
+                  대한 설명을 나열하여 작성할 것!
+                </p>
+                <div class="btn_box">
+                  <a
+                    href="https://ekingdom94.github.io/project_HALO/"
+                    target="_blank"
+                    class="site_btn"
+                    >사이트로 이동</a
+                  >
+                  <a
+                    href="https://github.com/ekingdom94/project_HALO/"
+                    target="_blank"
+                    class="github_btn"
+                    ><span></span> GitHub</a
+                  >
+                  <a
+                    href="https://www.figma.com/design/pz2JCdrHIFt75RER0RDYFL/halo?node-id=679-3818"
+                    target="_blank"
+                    class="figma_btn"
+                    ><span></span> Figma</a
+                  >
+                </div>
+              </div>
+              <div class="portfolio_right"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="design">
+        <div class="design_title">
+          <img src="img/design.png" alt="design" />
+          <h2>Work</h2>
+        </div>
+        <span class="design_shape1"
+          ><img src="img/design_shap1.svg" alt=""
+        /></span>
+        <span class="design_shape2"
+          ><img src="img/design_shap2.svg" alt=""
+        /></span>
+        <div id="design_slider" class="swiper">
+          <ul id="design_slider_wrap" class="swiper-wrapper">
+            <li class="swiper-slide">
+              <img
+                src="img/design1.jpg"
+                alt="파리 올림픽 가상 포스터"
+                class="img_link"
+              />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>2024 파리 올림픽 포스터</h3>
+                  <span>홍보 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop, Illustration</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <img src="img/design2.jpg" alt="" class="img_link" />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>공차 신메뉴 포스터</h3>
+                  <span>상품 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <img src="img/design3.jpg" alt="" class="img_link" />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>불꽃축제 홍보 포스터</h3>
+                  <span>홍보 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <img
+                src="img/design1.jpg"
+                alt="파리 올림픽 가상 포스터"
+                class="img_link"
+              />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>2024 파리 올림픽 포스터</h3>
+                  <span>홍보 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop, Illustration</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <img src="img/design2.jpg" alt="" class="img_link" />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>공차 신메뉴 포스터</h3>
+                  <span>상품 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <img src="img/design3.jpg" alt="" class="img_link" />
+              <div class="design_bottom">
+                <div class="design_title">
+                  <h3>불꽃축제 홍보 포스터</h3>
+                  <span>홍보 포스터</span>
+                </div>
+                <p><span>사용프로그램</span> Photoshop</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="contact">
+        <div id="contact_inner" class="container">
+          <span id="contact_shape1"></span>
+          <span id="contact_shape2"></span>
+          <div class="contact_title">
+            <h2>
+              <img src="img/contact_thanksfor.png" alt="Thanks for" />Checking
+              it out!
+            </h2>
+            <p>유연한 사고로 가능성을 확장하고자 하는 김예은이였습니다</p>
+          </div>
+          <div id="contact_box">
+            <a href="tel:+01084455206" class="button"
+              ><span class="tel_icon"></span>010-8445-5206</a
+            >
+            <a href="mailto:aappllee009@gmail.com" class="button"
+              ><span class="email_icon"></span>aappllee009@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="contact_loop">
+        <div class="loop_text">
+          PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN
+          <span></span> PORTFOLIO KIM YEEUN <span></span>
+        </div>
+        <div class="loop_text">
+          PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN
+          <span></span> PORTFOLIO KIM YEEUN <span></span>
+        </div>
+        <div class="loop_text">
+          PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN
+          <span></span> PORTFOLIO KIM YEEUN <span></span>
+        </div>
+        <div class="loop_text">
+          PORTFOLIO KIM YEEUN <span></span> PORTFOLIO KIM YEEUN
+          <span></span> PORTFOLIO KIM YEEUN <span></span>
+        </div>
+      </div>
     </main>
     <footer class="section fp-auto-height">
-        <div id="footer_inner" class="container">
-            <p>© 2024.Kim Yeeun. All Rights Reserved</p>
-            <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
-        </div>
+      <div id="footer_inner" class="container">
+        <p>© 2024.Kim Yeeun. All Rights Reserved</p>
+        <p>
+          본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
